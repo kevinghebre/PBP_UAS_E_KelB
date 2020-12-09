@@ -151,7 +151,6 @@ public class AdapterFood extends RecyclerView.Adapter<AdapterFood.adapterFoodVie
         private final TextView stock;
         private final TextView ivEdit;
         private final TextView ivHapus;
-        ;
         private final ImageView ivGambar;
 
         public adapterFoodViewHolder(@NonNull View itemView) {

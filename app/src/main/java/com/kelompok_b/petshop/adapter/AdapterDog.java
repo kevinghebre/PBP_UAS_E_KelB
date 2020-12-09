@@ -84,21 +84,21 @@ public class AdapterDog extends RecyclerView.Adapter<AdapterDog.adapterDogViewHo
         holder.umur_dog.setText(formatter.format(dog.getUmur_dog()) + " Month");
         holder.jk_dog.setText(dog.getJk_dog());
         holder.harga_dog.setText("Rp " + formatter.format(dog.getHarga_dog()));
-        Glide.with(context)
-                .load(R.drawable.ic_baseline_pets_24)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .skipMemoryCache(true)
-                .into(holder.ivGambar);
+//        Glide.with(context)
+//                .load(R.drawable.ic_baseline_pets_24)
+//                .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                .skipMemoryCache(true)
+//                .into(holder.ivGambar);
 
-//        if (dog.getImage_dog() != null) {
-//            byte[] imageByteArray = Base64.decode(dog.getImage_dog(), Base64.DEFAULT);
-//            Glide.with(context)
-//                    .load(imageByteArray)
-//                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-//                    .skipMemoryCache(true)
-//                    .placeholder(R.drawable.ic_baseline_pets_24)
-//                    .into(holder.ivGambar);
-//        }
+        if (dog.getImage_dog() != null) {
+            byte[] imageByteArray = Base64.decode(dog.getImage_dog(), Base64.DEFAULT);
+            Glide.with(context)
+                    .load(imageByteArray)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .skipMemoryCache(true)
+                    .placeholder(R.drawable.ic_baseline_pets_24)
+                    .into(holder.ivGambar);
+        }
 
         holder.ivEdit.setOnClickListener(new View.OnClickListener() {
             @Override
