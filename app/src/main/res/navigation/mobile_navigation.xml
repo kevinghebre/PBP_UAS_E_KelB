@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.kelompok_b.petshop.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.kelompok_b.petshop.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery"/>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.kelompok_b.petshop.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow"/>
+
+    <fragment
+        android:id="@+id/nav_shop"
+        android:name="com.kelompok_b.petshop.ui.shop.ShopFragment"
+        android:label="Shopping Center"
+        tools:layout="@layout/dog_shop_fragment">
+        <action
+            android:id="@+id/action_nav_shop_to_nav_cat_shop"
+            app:destination="@id/nav_cat_shop" />
+        <action
+            android:id="@+id/action_nav_shop_to_nav_dog_shop"
+            app:destination="@id/nav_dog_shop" />
+        <action
+            android:id="@+id/action_nav_shop_to_nav_food_shop"
+            app:destination="@id/nav_food_shop" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_profil"
+        android:name="com.kelompok_b.petshop.ui.profil.ProfilFragment"
+        android:label="@string/menu_profil"
+        tools:layout="@layout/fragment_profil" >
+        <action
+            android:id="@+id/action_nav_profil_to_nav_profil_update"
+            app:destination="@id/nav_profil_update" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_profil_update"
+        android:name="com.kelompok_b.petshop.ui.profil.EditProfileFragment"
+        android:label="Update Profil"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_nav_profil_update_to_nav_profil"
+            app:destination="@id/nav_profil" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.kelompok_b.petshop.SettingFragment"
+        android:label="@string/action_settings"
+        tools:layout="@layout/fragment_setting"/>
+
+    <fragment
+        android:id="@+id/nav_dog_shop"
+        android:name="com.kelompok_b.petshop.Views.ViewsDog"
+        android:label="@string/dog"
+        tools:layout="@layout/dog_shop_fragment" />
+
+    <fragment
+        android:id="@+id/nav_cat_shop"
+        android:name="com.kelompok_b.petshop.Views.ViewsCat"
+        android:label="@string/cat"
+        tools:layout="@layout/cat_shop_fragment" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_food_shop"
+        android:name="com.kelompok_b.petshop.Views.ViewsFood"
+        android:label="Food"
+        tools:layout="@layout/food_shop_fragment" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.kelompok_b.petshop.acc.LogOutFragment"
+        android:label="LogOut"
+        tools:layout="@layout/fragment_log_out"/>
+
+</navigation>

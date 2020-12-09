@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/dog"
+            android:iconTint="#0091EA"
+            android:title="Dog"
+            app:showAsAction="never"></item>
+
+        <item
+            android:id="@+id/cat"
+            android:iconTint="#0091EA"
+            android:title="Cat"
+            app:showAsAction="never"></item>
+
+        <item
+            android:id="@+id/food"
+            android:iconTint="#0091EA"
+            android:title="Food"
+            app:showAsAction="never"></item>
+
+        <item
+            android:id="@+id/action_setting"
+            android:iconTint="#0091EA"
+            android:title="Setting"
+            app:showAsAction="never"></item>
+    </group>
+</menu>

@@ -1,0 +1,100 @@
+Index: app/src/main/java/com/kelompok_b/petshop/model/Dog.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.kelompok_b.petshop.model;\r\n\r\nimport android.widget.ImageView;\r\n\r\nimport androidx.databinding.BindingAdapter;\r\n\r\nimport com.bumptech.glide.Glide;\r\n\r\npublic class Dog {\r\n\r\n    public String name;\r\n    public String race;\r\n    public String age;\r\n    public String gender;\r\n    public String size;\r\n    public String height;\r\n    public String imgURL;\r\n\r\n    public Dog(String name, String race, String age, String gender, String size, String height, String imgURL) {\r\n        this.name = name;\r\n        this.race = race;\r\n        this.age = age;\r\n        this.gender = gender;\r\n        this.size = size;\r\n        this.height = height;\r\n        this.imgURL = imgURL;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n    public String getRace() {\r\n        return race;\r\n    }\r\n\r\n    public void setRace(String race) {\r\n        this.race = race;\r\n    }\r\n\r\n    public String getAge() {\r\n        return age;\r\n    }\r\n\r\n    public void setAge(String age) {\r\n        this.age = age;\r\n    }\r\n\r\n    public String getGender() {\r\n        return gender;\r\n    }\r\n\r\n    public void setGender(String gender) {\r\n        this.gender = gender;\r\n    }\r\n\r\n    public String getSize() {\r\n        return size;\r\n    }\r\n\r\n    public void setSize(String size) {\r\n        this.size = size;\r\n    }\r\n\r\n    public String getHeight() {\r\n        return height;\r\n    }\r\n\r\n    public void setHeight(String height) {\r\n        this.height = height;\r\n    }\r\n\r\n    public String getImgURL() {\r\n        return imgURL;\r\n    }\r\n\r\n    public void setImgURL(String imgURL) {\r\n        this.imgURL = imgURL;\r\n    }\r\n\r\n    @BindingAdapter(\"android:loadImage\")\r\n    public static void loadImage (ImageView imgView, String imgURL){\r\n        Glide.with(imgView)\r\n                .load(imgURL)\r\n                .into(imgView);\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/kelompok_b/petshop/model/Dog.java	(revision c3810ab5ca520c968a230bc3b8edccd745e4f9cb)
++++ app/src/main/java/com/kelompok_b/petshop/model/Dog.java	(date 1607252399132)
+@@ -8,13 +8,10 @@
+ 
+ public class Dog {
+ 
+-    public String name;
+-    public String race;
+-    public String age;
+-    public String gender;
+-    public String size;
+-    public String height;
++    public int idDog;
++    public String name,race,age,gender,size;
+     public String imgURL;
++    public Double harga;
+ 
+     public Dog(String name, String race, String age, String gender, String size, String height, String imgURL) {
+         this.name = name;
+@@ -22,7 +19,7 @@
+         this.age = age;
+         this.gender = gender;
+         this.size = size;
+-        this.height = height;
++        this.harga = harga;
+         this.imgURL = imgURL;
+     }
+ 
+@@ -66,12 +63,12 @@
+         this.size = size;
+     }
+ 
+-    public String getHeight() {
+-        return height;
++    public String getHarga() {
++        return harga;
+     }
+ 
+-    public void setHeight(String height) {
+-        this.height = height;
++    public void setHarga(String height) {
++        this.harga = harga;
+     }
+ 
+     public String getImgURL() {
+Index: app/src/main/java/com/kelompok_b/petshop/model/Acc.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/kelompok_b/petshop/model/Acc.java	(date 1607248024371)
++++ app/src/main/java/com/kelompok_b/petshop/model/Acc.java	(date 1607248024371)
+@@ -0,0 +1,4 @@
++package com.kelompok_b.petshop.model;
++
++public class Acc {
++}
+Index: app/src/main/java/com/kelompok_b/petshop/API/AccAPI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/kelompok_b/petshop/API/AccAPI.java	(date 1607251258065)
++++ app/src/main/java/com/kelompok_b/petshop/API/AccAPI.java	(date 1607251258065)
+@@ -0,0 +1,10 @@
++package com.kelompok_b.petshop.API;
++
++public class AccAPI {
++    public static final String ROOT_URL   = "https://pbp.pelangidb.com/";
++    public static final String ROOT_API   = ROOT_URL+ "api/";
++    public static final String URL_ADD    = ROOT_API+"mahasiswa";
++    public static final String URL_SELECT = ROOT_API+"mahasiswa";
++    public static final String URL_UPDATE = ROOT_API+"mahasiswa/update/";
++    public static final String URL_DELETE = ROOT_API+"mahasiswa/delete/";
++}
+Index: app/src/main/java/com/kelompok_b/petshop/API/DogAPI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/kelompok_b/petshop/API/DogAPI.java	(date 1607251258089)
++++ app/src/main/java/com/kelompok_b/petshop/API/DogAPI.java	(date 1607251258089)
+@@ -0,0 +1,10 @@
++package com.kelompok_b.petshop.API;
++
++public class DogAPI {
++    public static final String ROOT_URL   = "https://pbp.pelangidb.com/";
++    public static final String ROOT_API   = ROOT_URL+ "api/";
++    public static final String URL_ADD    = ROOT_API+"hewan";
++    public static final String URL_SELECT = ROOT_API+"hewan";
++    public static final String URL_UPDATE = ROOT_API+"hewan/update/";
++    public static final String URL_DELETE = ROOT_API+"hewan/delete/";
++}
