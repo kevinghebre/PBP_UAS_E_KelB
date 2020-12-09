@@ -45,7 +45,7 @@ public class LogOutTest {
 
     @Test
     public void logOutTest() {
-        onView(isRoot()).perform(waitFor(10000));
+        onView(isRoot()).perform(waitFor(12000));
         ViewInteraction materialButton = onView(
                 allOf(withId(R.id.btn_sign_in), withText("Login"),
                         childAtPosition(
@@ -55,6 +55,7 @@ public class LogOutTest {
                                 2),
                         isDisplayed()));
         materialButton.perform(click());
+        onView(isRoot()).perform(waitFor(2000));
 
         ViewInteraction textInputEditText = onView(
                 allOf(withId(R.id.input_email_login),
